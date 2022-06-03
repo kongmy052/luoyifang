@@ -85,6 +85,8 @@ const hasJsxRuntime = (() => {
   }
 })();
 
+const pxtorem = require('postcss-pxtorem');
+
 // This is the production and development configuration.
 // It is focused on developer experience, fast rebuilds, and a minimal bundle.
 module.exports = function (webpackEnv) {
@@ -147,6 +149,11 @@ module.exports = function (webpackEnv) {
                   // so that it honors browserslist config in package.json
                   // which in turn let's users customize the target behavior as per their needs.
                   'postcss-normalize',
+                    pxtorem({
+                      rootValue: 75, // 设计稿宽度的1/10,（JSON文件中不加注释，此行注释及下行注释均删除）
+                      propList: ["*"], // 需要做转化处理的属性，如`hight`、`width`、`margin`等，`*`表示全部
+                      exclude: /(node_modules)/  //不对 node_modules下的px做转化
+                    }),
                 ]
               : [
                   'tailwindcss',
