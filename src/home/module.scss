@@ -2,8 +2,6 @@
     width: 95%;
     height: 400px;
     margin: 40px auto;
-    // background-color: aqua;
-
     .module2 {
         margin-top: 10px;
     }
@@ -15,12 +13,11 @@
         .modules {
             width: 135px;
             height: 120px;
-            background-color: rgb(241, 167, 117);
+            background-image: linear-gradient(to left, rgb(255, 181, 116), rgb(245, 222, 202));
 
             &:nth-child(2),
             &:nth-child(3) {
                 flex-grow: 2;
-                background-color: rgb(114, 181, 223);
                 border-left: 1px solid white;
                 border-right: 1px solid white;
             }
@@ -44,6 +41,32 @@
                 margin-top: 5px;
             }
         }
+
+    }
+
+    .module1 .modules:nth-child(1),
+    .module2 .modules:nth-child(1) {
+        background-image: linear-gradient(to right, rgb(255, 181, 116), rgb(245, 222, 202));
+
+    }
+
+    .module1 .modules:nth-child(2) {
+        background-image: linear-gradient(to bottom right, rgb(50, 162, 232), rgb(221, 244, 255));
+
+    }
+
+    .module1 .modules:nth-child(3) {
+        background-image: linear-gradient(to bottom left, rgb(50, 162, 232), rgb(221, 244, 255));
+
+    }
+
+    .module2 .modules:nth-child(2) {
+        background-image: linear-gradient(to top right, rgb(50, 162, 232), rgb(221, 244, 255));
+
+    }
+
+    .module2 .modules:nth-child(3) {
+        background-image: linear-gradient(to top left, rgb(50, 162, 232), rgb(221, 244, 255));
 
     }
 
@@ -79,14 +102,16 @@
             }
         }
     }
+
     .module1 .modules,
-    .module2 .modules{
-         &:nth-child(3){
-             span{
-                 margin-left: 80px;
-             }
-         }
+    .module2 .modules {
+        &:nth-child(3) {
+            span {
+                margin-left: 80px;
+            }
+        }
     }
+
     .module1 .modules,
     .module2 .modules {
         &:nth-child(2) {
@@ -101,7 +126,8 @@
         z-index: 9;
         width: 150px;
         height: 150px;
-        background-color: rgb(198, 171, 249);
+        // background-color: rgb(198, 171, 249); 
+        background: radial-gradient(rgb(226, 222, 232), rgb(197, 168, 251));
         border-radius: 50%;
         left: 50%;
         margin-left: -75px;
@@ -119,7 +145,8 @@
             margin: 20px auto;
             color: rgb(60, 60, 60);
         }
-        span{
+
+        span {
             position: absolute;
             font-size: 26px;
             font-weight: 600;

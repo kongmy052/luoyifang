@@ -35,29 +35,34 @@ const Bottom = (props) => {
       icon: <Icon name="31wode" />,
     },
   ]
-
   useEffect(() => {
-    //第一次加载底部导航, 获取页面的最初实际高度, 设置clientHeight的值
-    setClientHeight(document.documentElement.clientHeight)
-    setShowHeight(document.documentElement.clientHeight)
+    //设置viewport的height为初始页面的默认高度
+    let view = document.querySelector('meta[name="viewport"]');
+    view.setAttribute('content', `height=${document.documentElement.clientHeight},width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no`)
+  },[])
 
-    window.onresize = () => {
-      return (() => {
-        //页面高度变化后, 设置showHeight的值
-        setShowHeight(document.body.clientHeight)
-      })()
-    }
-
-    return () => {
-      window.onresize = () => {
-      }
-    }
-  }, [])
-
+  // useEffect(() => {
+  //   //第一次加载底部导航, 获取页面的最初实际高度, 设置clientHeight的值
+  //   setClientHeight(document.documentElement.clientHeight)
+  //   setShowHeight(document.documentElement.clientHeight)
+  //
+  //   window.onresize = () => {
+  //     return (() => {
+  //       //页面高度变化后, 设置showHeight的值
+  //       setShowHeight(document.body.clientHeight)
+  //     })()
+  //   }
+  //
+  //   return () => {
+  //     window.onresize = () => {
+  //     }
+  //   }
+  // }, [])
+/*
   if (showHeight && clientHeight && showHeight < (clientHeight - 10)) {
     //如果页面变化后的高度 小于 最初的高度, 那么返回一个空页面
     return <div></div>
-  }
+  }*/
 
 
   return <TabBar onChange={value => navigate(value)}>

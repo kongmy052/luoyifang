@@ -1,12 +1,13 @@
-import { SearchBar} from 'antd-mobile';
+import { SearchBar } from 'antd-mobile';
 import React, { PureComponent } from 'react';
 import './search.scss';
 import Module from "./module";
+import Introduce from './introduction';
 
 export default class SearchBarExample extends PureComponent {
   state = {
     value: '',
-    hotClassName:false
+    hotClassName: false
   };
   onChange = (value) => {
     this.setState({ value });
@@ -21,7 +22,7 @@ export default class SearchBarExample extends PureComponent {
     let styleOfSearch = {
       backgroundColor: '#000'
     }
-    return (<div>
+    return (<div className='searchFather'>
       <SearchBar
         className='search'
         value={this.state.value}
@@ -29,30 +30,31 @@ export default class SearchBarExample extends PureComponent {
         // onSubmit={value => console.log(value, 'onSubmit')}
         // onClear={value => console.log(value, 'onClear')}
         onFocus={() => this.setState({
-          hotClassName : true
+          hotClassName: true
         })}
         onBlur={() => this.setState({
-          hotClassName : false
+          hotClassName: false
         })}
         onCancel={this.onSearch}
         showCancelButton
         onChange={this.onChange}
-        cancelText = '搜索'
+        cancelText='搜索'
       />
       {
-        this.state.hotClassName ? <HotSearch/> : null
+        this.state.hotClassName ? <HotSearch /> : null
       }
-      <Module/>
+      <Module />
+      <Introduce />
     </div>);
   }
 }
-class HotSearch extends PureComponent{
-  render(){
-    return(
+class HotSearch extends PureComponent {
+  render() {
+    return (
       <>
         <dl className='hotSearch'>
           <dt>热门搜索</dt>
-          <hr/>
+          <hr />
           <dd>龙门石窟<span>↖</span></dd>
           <dd>应天门<span>↖</span></dd>
           <dd>王城公园<span>↖</span></dd>
