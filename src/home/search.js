@@ -1,6 +1,8 @@
-import { SearchBar, Button, WhiteSpace, WingBlank } from 'antd-mobile';
-import { PureComponent } from 'react';
+import { SearchBar} from 'antd-mobile';
+import React, { PureComponent } from 'react';
 import './search.scss';
+import Module from "./module";
+
 export default class SearchBarExample extends PureComponent {
   state = {
     value: '',
@@ -15,9 +17,6 @@ export default class SearchBarExample extends PureComponent {
   onSearch = (value) => {
     console.log(this.state.value);
   }
-  //   handleClick = () => {
-  //     this.manualFocusInst.focus();
-  //   }
   render() {
     let styleOfSearch = {
       backgroundColor: '#000'
@@ -43,6 +42,7 @@ export default class SearchBarExample extends PureComponent {
       {
         this.state.hotClassName ? <HotSearch/> : null
       }
+      <Module/>
     </div>);
   }
 }
@@ -53,21 +53,12 @@ class HotSearch extends PureComponent{
         <dl className='hotSearch'>
           <dt>热门搜索</dt>
           <hr/>
-          <dd>龙门石窟</dd>
-          <dd>龙门石窟</dd>
-          <dd>龙门石窟</dd>
-          <dd>龙门石窟</dd>
+          <dd>龙门石窟<span>↖</span></dd>
+          <dd>应天门<span>↖</span></dd>
+          <dd>王城公园<span>↖</span></dd>
+          <dd>白马寺<span>↖</span></dd>
         </dl>
       </>
     )
   }
 }
-// ReactDOM.render(<SearchBarExample />, mountNode);
-// .am-search {
-//   border-bottom: 1px solid #ddd;
-// }
-// .sub-title {
-//   color: #888;
-//   font-size: 14px;
-//   padding: 30px 0 18px 0;
-// }

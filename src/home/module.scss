@@ -1,0 +1,131 @@
+.module {
+    width: 95%;
+    height: 400px;
+    margin: 40px auto;
+    // background-color: aqua;
+
+    .module2 {
+        margin-top: 10px;
+    }
+
+    .module1,
+    .module2 {
+        display: flex;
+
+        .modules {
+            width: 135px;
+            height: 120px;
+            background-color: rgb(241, 167, 117);
+
+            &:nth-child(2),
+            &:nth-child(3) {
+                flex-grow: 2;
+                background-color: rgb(114, 181, 223);
+                border-left: 1px solid white;
+                border-right: 1px solid white;
+            }
+
+            .icon {
+                // background-color: rgb(255, 193, 193);
+                color: rgb(61, 61, 61);
+                width: 60px;
+                height: 60px;
+                margin-top: 10px;
+                margin-left: 37px;
+            }
+
+            span {
+                display: block;
+                width: 100px;
+                text-align: center;
+                // background-color: aliceblue;
+                font-size: 27px;
+                margin-left: 15px;
+                margin-top: 5px;
+            }
+        }
+
+    }
+
+    .module1 .modules {
+        &:nth-child(1) {
+            border-top-left-radius: 20px;
+        }
+
+        &:nth-last-child(1) {
+            border-top-right-radius: 20px;
+        }
+
+        &:nth-child(3) {
+            .icon {
+                margin-left: 100px;
+            }
+        }
+    }
+
+    .module2 .modules {
+        &:nth-child(1) {
+            border-bottom-left-radius: 20px;
+        }
+
+        &:nth-last-child(1) {
+            border-bottom-right-radius: 20px;
+        }
+
+        &:nth-child(3) {
+            .icon {
+                margin-left: 100px;
+
+            }
+        }
+    }
+    .module1 .modules,
+    .module2 .modules{
+         &:nth-child(3){
+             span{
+                 margin-left: 80px;
+             }
+         }
+    }
+    .module1 .modules,
+    .module2 .modules {
+        &:nth-child(2) {
+            .icon {
+                margin-left: 40px;
+            }
+        }
+    }
+
+    .centerIcon {
+        position: absolute;
+        z-index: 9;
+        width: 150px;
+        height: 150px;
+        background-color: rgb(198, 171, 249);
+        border-radius: 50%;
+        left: 50%;
+        margin-left: -75px;
+        top: 165px;
+        border: 7px solid white;
+
+        .icon {
+            width: 50%;
+            height: 50%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: 20px auto;
+            color: rgb(60, 60, 60);
+        }
+        span{
+            position: absolute;
+            font-size: 26px;
+            font-weight: 600;
+            bottom: 20px;
+            left: 24px;
+        }
+    }
+
+}

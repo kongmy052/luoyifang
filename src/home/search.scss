@@ -11,3 +11,29 @@
 
    }
 }
+.hotSearch{
+  position: absolute;
+  z-index: 99;
+  width: 95%;
+  height: 36%;
+  left: 2.5%;
+  margin-top: 0;
+  font-size: 28px;
+  background-color: rgb(245,247,250);
+  hr{
+    width: 92%;
+
+  }
+  dt{
+    margin-top: 5px;
+    margin-left: 20px;
+  }
+  dd{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    span{
+      float: right;
+      margin-right: 100px;
+    }
+  }
+}
